@@ -9,7 +9,7 @@ spring-boot-starter-aop
 jackson
 
 ## 配置
-```
+``` java
 @Configuration
 public class TokenConfig {
 
@@ -31,7 +31,7 @@ public class TokenConfig {
 }
 ```
 不同用户类型使用不同配置
-```
+``` java
     @Bean
     public AvalonTokenStore userAvalonTokenStore(StringRedisTemplate redisTemplate, Environment environment) {
         AvalonTokenStore userAvalonTokenStore = new AvalonTokenStore(redisTemplate, environment);
@@ -43,7 +43,7 @@ public class TokenConfig {
 ```
 
 application.yml
-```
+``` yaml
 avalon:
   token:
     #token头部的key名 默认 Authorization
@@ -67,7 +67,7 @@ avalon:
 ```
 ## 使用
 ### 接口使用
-```
+``` java
     /**
      * 需要鉴权的接口 使用 @AvalonAuthorize
      * @return
@@ -79,7 +79,7 @@ avalon:
     }
 ```
 ### 代码使用
-```
+``` java
 #根据id登录
 TokenHelper.get().login("1");
 #根据id、权限登录
