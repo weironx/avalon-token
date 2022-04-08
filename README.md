@@ -1,6 +1,6 @@
 # avalon-token
 一个简单用于springboot权限认证的工具，使用redis用于存储。
-#配置
+##配置
 ```
 @Configuration
 public class TokenConfig {
@@ -57,7 +57,7 @@ avalon:
     #是否生成刷新token 默认 true
     refresh: true
 ```
-#使用
+##使用
 ###接口使用
 ```
     /**
